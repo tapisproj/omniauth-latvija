@@ -5,7 +5,7 @@ module OmniAuth::Strategies
 
       attr_accessor :options, :response
 
-      def initialize(response, **options)
+      def initialize(response, options)
         raise ArgumentError, 'Response cannot be nil' if response.nil?
         @options  = options
         @response = response

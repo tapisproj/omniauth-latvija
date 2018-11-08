@@ -29,7 +29,7 @@ module OmniAuth::Strategies
       XENC = 'http://www.w3.org/2001/04/xmlenc#'.freeze
       CANON_MODE = Nokogiri::XML::XML_C14N_EXCLUSIVE_1_0
 
-      def initialize(response, **opts)
+      def initialize(response, opts)
         @response = Nokogiri::XML.parse(response, &:noblanks)
         return unless encrypted?
         decryptor = OmniAuth::Strategies::Latvija::Decryptor.new(response, opts[:private_key])
